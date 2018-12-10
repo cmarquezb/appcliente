@@ -1,0 +1,166 @@
+{{> header }}
+
+<script>
+	$(function() {
+	    function log( message ) {
+      $( "<div>" ).text( message ).prependTo( "#log" );
+      $( "#log" ).scrollTop( 0 );
+    }
+ 
+    $( "#provincia" ).autocomplete({
+      source: "/Combosprovincia",
+      minLength: 1,
+      select: function( event, ui ) {
+        log( "Selected: " + ui.item.value + " : " + ui.item.label );
+        $("#cod_provincia").val(ui.item.value1);
+      }
+    });
+
+    $( "#localidad" ).autocomplete({       
+            source: function (request, response) {
+                $.ajax({                
+                    url: "/Comboslocalidad",                    
+                    data: { 
+                        term: $("#localidad").val(),
+                        term2: $("#cod_provincia").val()
+                    },                    
+                    dataType: "json",                    
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            return {
+                                //Indicamos el Valor
+                                value: item.value,
+                                value1: item.value1 ,
+                                value2: item.value2,
+                                label: item.label                            
+                            }
+                        }))
+                    }
+                })
+            },      
+      minLength: 1,      
+      select: function( event, ui ) {
+        log( "Selected: " + ui.item.value + " : " + ui.item.label );
+        $("#cod_localidad").val(ui.item.value1);
+        $("#cod_provincia").val(ui.item.value2);
+        $("#cod_postal").val(ui.item.value3);
+      }
+    });
+	});
+
+</script>
+
+<div id="main_Clientes" class="container main_Clientes">
+<div class="row">
+<fieldset class="col-xs-10 col-xs-offset-1">
+    <legend class="hidden-xs"><h3>Clientes</h3></legend>
+    <form method="POST" action="/" class="form-horizontal" id="form_Clientes">          
+            <div class="form-group">
+                <div class="col-md-12 col-sm-1 col-xs-12">       
+                    <label class="col-xs-3" for="cod_Clientes"><h4 class="text-left">DNI</h4></label>                            
+                    <input type="text" id="cod_Clientes" name="cod_Clientes" size="8" class="form-comtrol  ImputMaestros col-xs-4" placeholder="N&uacute;mero de Clientes" onkeypress="return validarnumero(event)">      
+                </div>
+            </div> 
+            <div class="form-group">
+                <div class="col-md-12 col-sm-1 col-xs-12">     
+                    <label class="col-xs-3" for="desc_clie"><h4 class="text-left">Nombre</h4></label>                            
+                    <input type="text" id="desc_clie" name="desc_clie" size="50" class="form-comtrol  ImputMaestros col-xs-8" placeholder="Nombre Cliente" onkeypress="return validartexto(event)">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 col-sm-1 col-xs-12">  
+                    <label class="col-xs-3" for="giro"><h4 class="text-left">Giro</h4></label>                            
+                    <input type="text" id="giro" name="giro" size="30" class="form-comtrol  ImputMaestros col-xs-8" placeholder="Giro" onkeypress="return validartexto(event)">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 col-sm-1 col-xs-12">      
+                    <label class="col-xs-3" for="direccion"><h4 class="text-left">Direcci&oacute;n</h4></label>                            
+                    <input type="text" id="direccion" name="direccion" class="form-comtrol  ImputMaestros col-xs-8" placeholder="Direcci&oacute;n" onkeypress="return validartextonum(event)">                             
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 col-sm-1 col-xs-12">      
+                    <label class="col-xs-3" for="email_clie"><h4 class="text-left">Email</h4></label>                            
+                    <input type="text" id="email_clie" size="40" name="email_clie" class="form-comtrol  ImputMaestros col-xs-8" placeholder="Email" onkeypress="return validemail(event)">                             
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 col-sm-1 col-xs-12">      
+                    <label class="col-xs-3" for="provincia"><h4 class="text-left">Provincia</h4></label>                            
+                    <input type="text" id="provincia" name="provincia" class="form-comtrol  ImputMaestros col-xs-8" placeholder="Provincia" onkeypress="return validartexto(event)">                             
+                    <input type="hidden" id="cod_provincia" name="cod_provincia" class="form-comtrol  ImputMaestros">  
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 col-sm-1 col-xs-12">      
+                    <label class="col-xs-3" for="localidad"><h4 class="text-left">Localidad</h4></label>                            
+                    <input type="text" id="localidad" name="localidad" class="form-comtrol  ImputMaestros col-xs-8" placeholder="Localida/Municipio/Barrio" onkeypress="return validartexto(event)">                             
+                    <input type="hidden" id="cod_localidad" name="cod_localidad" class="form-comtrol  ImputMaestros"> 
+                    <input type="hidden" id="cod_postal" name="cod_postal" class="form-comtrol  ImputMaestros">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 col-sm-1 col-xs-12">  
+                    <label class="col-xs-3" for="fono"><h4 class="text-left">Fono</h4></label>                            
+                    <input type="text" id="fono" size="12" name="fono" class="form-comtrol  ImputMaestros col-xs-4" placeholder="Fono" onkeypress="return validarnumero(event)">           
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 col-sm-1 col-xs-12">      
+                    <label class="col-xs-3" for="celular"><h4 class="text-left">Celular</h4></label>  
+                    <input type="text" id="celular" size="12" name="celular" class="form-comtrol ImputMaestros col-xs-4" placeholder="Cecular" onkeypress="return validarnumero(event)">
+                </div> 
+            </div>           
+        <div class="btn-group" id="botones">                    
+            <button type="button" class="btn btn-primary center-block" id="guardar1" onclick="guardarclie()">Guardar</button>
+            <button type="button" class="btn btn-primary center-block" id="editar" onclick="actualizarclie()">Actualizar</button>                
+            <button type="button" class="btn btn-primary center-block" id="cancelar" onclick="cancelclie()">Cancelar</button>                				
+        </div>    
+    </form>
+    <br/> <br/>  
+            <div class="form-group">
+                <button type="button" class="btn btn-primary center-block" onclick="agregar()">Nuevo Cliente</button>
+            </div> 
+            <div style="overflow-x:auto;">
+                <table class="table-responsive table-condensed" id="data">
+                    <div class="row contact-bothside-agileinfo "></div>                
+                    <thead>
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <tr>
+                                <div class="col-md-1 col-sm-1 col-xs-1 col-xs-offset-1">
+                                    <th class="col-xs-1 col-xs-offset-1"><h5>DNI</h5></th>	
+                                </div>
+                                <div class="col-md-7 col-sm-1 col-xs-7 col-xs-offset-1">
+                                    <th class="col-xs-7 col-xs-offset-1"><h5>NOMBRE</h5></th>
+                                </div>  
+                                 <div class="col-md-1 col-sm-1 col-xs-1 col-xs-offset-1">
+                                    <th class="col-xs-1 col-xs-offset-1"></th>
+                                </div> 
+                                 <div class="col-md-1 col-sm-1 col-xs-1 col-xs-offset-1">
+                                    <th class="col-xs-1 col-xs-offset-1"></th>
+                                </div>                               
+                            </tr>
+                        </div>
+                    </thead>           
+                    <tbody>
+                        <tr>
+                            <div class="col-md-1 col-sm-1 col-xs-1 col-xs-offset-1">
+                                <th class="col-xs-1 col-xs-offset-1"></th>	
+                            </div>
+                            <div class="col-md-7 col-sm-1 col-xs-7 col-xs-offset-1">
+                                <th class="col-xs-7 col-xs-offset-1"></h4></th>
+                            </div>  
+                                <div class="col-md-1 col-sm-1 col-xs-1 col-xs-offset-1">
+                                <th class="col-xs-1 col-xs-offset-1"></th>
+                            </div> 
+                                <div class="col-md-1 col-sm-1 col-xs-1 col-xs-offset-1">
+                                <th class="col-xs-1 col-xs-offset-1"></th>
+                            </div>                               
+                        </tr>
+                    </tbody>
+			    </table>   
+            </div>                  
+        </fieldset>
+    </div> 
+</div>

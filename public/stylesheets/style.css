@@ -1,0 +1,343 @@
+.login{
+  width: 30%;
+  transition: 2s;
+  margin-top: 100px;
+  box-shadow: 0px 0px 40px blue,0px 0px 80px white;
+  border-radius: 10px;
+}
+.logo{
+  height: 75px; 
+  margin-top: 10px;        
+}
+.main_Area{
+  width: 45%;
+  transition: 2s;
+  margin-top: 100px;
+  box-shadow: 0px 0px 40px blue,0px 0px 80px white;
+  border-radius: 10px;
+  height: 95%; 
+  margin-top: 40px;   
+}
+
+.main_Centro{
+  width: 45%;
+  transition: 2s;
+  margin-top: 100px;
+  box-shadow: 0px 0px 40px blue,0px 0px 80px white;
+  border-radius: 10px;
+  height: 95%; 
+  margin-top: 40px;   
+}
+.main_Clientes{
+  width: 45%;
+  transition: 2s;
+  margin-top: 100px;
+  box-shadow: 0px 0px 40px blue,0px 0px 80px white;
+  border-radius: 10px;
+  height: 95%; 
+  margin-top: 40px;   
+}
+.main_Servicios{
+  width: 45%;
+  transition: 2s;
+  margin-top: 100px;
+  box-shadow: 0px 0px 40px blue,0px 0px 80px white;
+  border-radius: 10px;
+  height: 95%; 
+  margin-top: 40px;   
+}
+.main_Estados{
+  width: 45%;
+  transition: 2s;
+  margin-top: 100px;
+  box-shadow: 0px 0px 40px blue,0px 0px 80px white;
+  border-radius: 10px;
+  height: 95%; 
+  margin-top: 40px;   
+}
+.main_Equipos{
+  width: 45%;
+  transition: 2s;
+  margin-top: 100px;
+  box-shadow: 0px 0px 40px blue,0px 0px 80px white;
+  border-radius: 10px;
+  height: 95%; 
+  margin-top: 40px;   
+}
+.main_Clientes{
+  height: 55%; 
+  margin-top: 40px;  
+  width: 55%;
+  transition: 2s;
+  margin-top: 100px;
+  box-shadow: 0px 0px 40px blue,0px 0px 80px white;
+  border-radius: 10px;   
+}
+.espaciado{
+  margin-top: 40px;
+}
+a {
+  color: #00B7FF;  
+}
+h3,h4{
+  color:red;
+  text-align: center;
+  top: 2px;
+}
+h5{
+  color:whitesmoke;
+  text-align: center;
+  font-size: 14pt;
+  top: 2px;
+}
+legend{
+  border: none;
+}
+.Imput{
+  transition: 8s;
+  background-color: rgba(0,0,0,.5);
+  color: white;
+  border-color: #006;
+  border-bottom-color: white;
+  border-bottom-style: groove;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-width: 6px;
+}
+.Imput:hover{
+  transition: .8s;
+  background-color: rgba(55,71,79,.5);
+  box-shadow: inset;
+  border-bottom-color: blue;
+
+}
+
+.ImputMaestros{
+  transition: 8s;
+  background-color: rgba(0,0,0,.5);
+  color: white;
+  border-color: #006;
+  border-bottom-color: white;
+  border-bottom-style: groove;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-width: 6px;
+}
+.ImputMaestros:hover{
+  transition: .8s;
+  background-color: rgba(55,71,79,.5);
+  box-shadow: inset;
+  border-bottom-color: blue;
+
+}
+
+.ImputMaestrosOT{
+  transition: 8s;
+  background-color: rgba(0,0,0,.5);
+  height: 34px;
+  color: white;
+  border-color: #006;
+  border-bottom-color: white;
+  border-bottom-style: groove;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-width: 6px;
+}
+.ImputMaestrosOT:hover{
+  transition: .8s;
+  background-color: rgba(55,71,79,.5);
+  box-shadow: inset;
+  border-bottom-color: blue;
+
+}
+table {
+  width: 100%;
+  border: 1px solid #999;
+  text-align: left;
+  border-collapse: collapse;
+  margin: 0 0 1em 0;
+  caption-side: top;
+  background-color: hsla(240,100%,50%,0.5);
+}
+caption, td, th {
+  padding: 0.3em;
+}
+th, td {
+  border-bottom: 1px solid #999;
+  width: 25%;
+}
+
+caption {
+  font-weight: bold;
+  font-style: italic;
+}
+
+@media screen and (max-width:750px){
+  .login{
+      width: 95%;
+      margin-top: 5px;
+  }
+  .logo{
+      height: 50px;
+  }
+  .main_Area{
+    width: 98%;
+    margin-top: 5px;
+  }
+  .main_Centro{
+    width: 98%;
+    margin-top: 5px;
+  }
+
+  .main_Servicios{
+    width: 98%;
+    margin-top: 5px;
+  }
+  .main_Estados{
+    width: 98%;
+    margin-top: 5px;
+  }
+  .main_Equipos{
+    width: 98%;
+    margin-top: 5px;
+  }
+  .main_Clientes{
+    width: 98%;
+    margin-top: 5px;
+  }
+  
+  table {
+    widows: 98%;
+    position: relative;
+    margin-left: auto;  
+    margin-right:auto;
+
+  }
+thead {
+    display: none;
+}
+tr:nth-of-type(2n) {
+    background-color: inherit;
+}
+tr td:first-child {
+    background: #f0f0f0;
+    font-weight:bold;
+    font-size:1.3em;
+}
+tbody td {
+    display: block;
+    text-align:center;
+}
+tbody td:before {
+    content: attr(data-th);
+    display: block;
+    text-align:center;
+}
+
+.opaque-navbar {
+  background: rgba(73,155,234,1);
+  background: -moz-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,0.3) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(73,155,234,1)), color-stop(100%, rgba(32,124,229,0.3)));
+  background: -webkit-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,0.3) 100%);
+  background: -o-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,0.3) 100%);
+  background: -ms-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,0.3) 100%);
+  background: linear-gradient(to right, rgba(73,155,234,1) 0%, rgba(32,124,229,0.3) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5', GradientType=1 );
+    height: 65px;
+    border-bottom: 0px;
+    transition: background-color .5s ease 0s;
+ }
+ 
+ .opaque-navbar.opaque {
+  background: rgba(73,155,234,1);
+ }
+
+ #topheader .navbar-nav li > a {
+  background-color: #006;
+}
+#topheader .navbar-nav li > a:hover, #topheader .navbar-nav li > a:focus {
+  background-color: #006;
+}
+
+#topheader .navbar-nav li.active > a {
+  background-color: #006;
+}
+.btn-group{
+  margin-left: 2%;
+  margin-right: 26%;
+}
+
+#botones{
+  margin-left: 2%;
+  margin-right: 26%;
+}
+}
+
+.opaque-navbar {
+ /* background: none;*/ 
+
+background: rgba(73,155,234,1);
+background: -moz-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,0.3) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(73,155,234,1)), color-stop(100%, rgba(32,124,229,0.3)));
+background: -webkit-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,0.3) 100%);
+background: -o-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,0.3) 100%);
+background: -ms-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,0.3) 100%);
+background: linear-gradient(to right, rgba(73,155,234,1) 0%, rgba(32,124,229,0.3) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5', GradientType=1 );
+  height: 65px;
+  border-bottom: 0px;
+  transition: background-color .5s ease 0s;
+}
+
+.opaque-navbar.opaque {
+  background-color: blue;
+  height: 60px;
+  transition: background-color .5s ease 0s;
+}
+
+#topheader .navbar-nav li > a {
+  text-transform: capitalize;
+  color: #000;
+  transition: background-color .2s, color .2s;
+}
+#topheader .navbar-nav li > a:hover, #topheader .navbar-nav li > a:focus {
+  background-color: #000;
+  color: #fff;
+}
+
+#topheader .navbar-nav li.active > a {
+  background-color: #000;
+  color: #fff;
+}
+#botones{
+  margin-left: 32%;
+  margin-right: 16%;
+}
+
+#botones2{
+  width: 65px;
+}
+#form_Area {  
+  display: none;
+}
+#form_Centro {  
+  display: none;
+}
+#form_Servicios {  
+  display: none;
+}
+#form_Responsables {  
+  display: none;
+}
+#form_Equipos {  
+  display: none;
+}
+#form_Clientes {  
+  display: none;
+}
+#form_Estados {  
+  display: none;
+}

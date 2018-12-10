@@ -1,0 +1,71 @@
+{{> header }}
+
+<div id="main_TUsuario" class="container main_TUsuario">
+    <div class="row">
+        <fieldset class="col-xs-10 col-xs-offset-1">
+            <legend class="hidden-xs"><h3>Maestros &Aacute;rea</h3></legend>
+            <form method="POST" action="/" class="form-horizontal" id="form_TUsuario">
+                <div class="form-group">
+                    <label class="col-xs-12" for="cod_TUsuario"><h4>C&oacute;digo de &aacute;rea</h4></label>                            
+                    <div class="col-xs-10 col-xs-offset-1">
+                        <input type="text" id="cod_TUsuario" name="cod_TUsuario" class="form-comtrol center-block ImputMaestros" placeholder="C&oacute;digo de &aacute;rea" onkeypress="return validarnumero(event)">
+                    </div>                            
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-12" for="desc_TUsuario"><h4>Descripci&oacute;n de &aacute;rea</h4></label>                            
+                    <div class="col-xs-10 col-xs-offset-1">
+                        <input type="text" id="desc_TUsuario" name="desc_TUsuario" class="form-comtrol center-block ImputMaestros" placeholder="Descripci&oacute;n &aacute;rea" onkeypress="return validartextonum(event)">
+                    </div>                            
+                </div>                             
+                <div class="btn-group" id="botones">                    
+                    <button type="button" class="btn btn-primary center-block" id="guardar1" onclick="guardar()">Guardar</button>
+                    <button type="button" class="btn btn-primary center-block" id="editar" onclick="actualizar()">Actualizar</button>                
+                    <button type="button" class="btn btn-primary center-block" id="cancelar" onclick="cancel()">Cancelar</button>                				
+                </div>    
+            </form>
+            <br/> <br/>  
+            <div class="form-group">
+                <button type="button" class="btn btn-primary center-block" onclick="agregar()">Nuevo Producto</button>
+            </div> 
+            <div style="overflow-x:auto;">
+                <table class="table-responsive table-condensed" id="data">
+                    <div class="row contact-bothside-agileinfo "></div>                
+                    <thead>
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <tr>
+                                <div class="col-xs-1 col-xs-offset-1">
+                                    <th colspan="1" scope="col"><h5>C&oacute;digo</h5></th>	
+                                </div>
+                                <div class="col-xs-7 col-xs-offset-1">
+                                    <th colspan="7" scope="col"><h5>Descripci&oacute;n</h5></th>
+                                </div>  
+                                 <div class="col-xs-1 col-xs-offset-1">
+                                    <th colspan="1" scope="col"></th>
+                                </div> 
+                                 <div class="col-xs-1 col-xs-offset-1">
+                                    <th colspan="1" scope="col"></th>
+                                </div>                               
+                            </tr>
+                        </div>
+                    </thead>           
+                    <tbody>
+                        <tr>
+                            <div class="col-xs-1 col-xs-offset-1">
+                                <th colspan="1" scope="col"></th>	
+                            </div>
+                            <div class="col-xs-7 col-xs-offset-1">
+                                <th colspan="7" scope="col"></h4></th>
+                            </div>  
+                                <div class="col-xs-1 col-xs-offset-1">
+                                <th colspan="1" scope="col"></th>
+                            </div> 
+                                <div class="col-xs-1 col-xs-offset-1">
+                                <th colspan="1" scope="col"></th>
+                            </div>                               
+                        </tr>
+                    </tbody>
+			    </table>   
+            </div>                  
+        </fieldset>
+    </div> 
+</div>
