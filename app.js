@@ -102,7 +102,7 @@ app.use(
         
         host: '127.0.0.1',
         user: 'root',
-        password : '',
+        password : 'Gomitrof456',
         port : 3306, //port mysql
         database:'otmorris'
 
