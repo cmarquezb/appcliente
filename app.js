@@ -100,9 +100,9 @@ app.use(
     
     connection(mysql,{
         
-        host: '159.65.245.55',
+        host: 'localhost',
         user: 'root',
-        password : 'Gomitrof456',
+        password : '',
         port : 3306, //port mysql
         database:'otmorris'
 
@@ -176,9 +176,9 @@ app.use('/Comboslocalidad', ajaxClientesLocalidadRouter);
 
 //app.use('/productos/eliminar', ajaxEliminarRouter);
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+//app.use(function(req, res, next) {
+//  next(createError(404));
+//});
 
 // error handler
 app.use(function(err, req, res, next) {
