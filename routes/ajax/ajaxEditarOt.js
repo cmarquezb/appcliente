@@ -3,19 +3,19 @@ var router = express.Router();
 
 router.post('/', function(req, res, next) {	       
     req.getConnection(function (err, connection) {               
-        var codigo = req.body.codigo;       
-        var data={          
-            
-            idResponsables: req.body.descripcion,
-            idArea: req.body.descripcion,
-            Estados_idEstados: req.body.descripcion,
-            Equipos_idEquipos: req.body.descripcion,
-            Servicios_idServicios: req.body.descripcion,
-            Centro_idCentro: req.body.descripcion,
-            Clientes_idClientes: req.body.descripcion,
-            Fecha: req.body.descripcion,
-            HES: req.body.descripcion,            
-            Observacion : req.body.descripcion         
+        var codigo = req.body.cod_OT;       
+        var data={      
+            idResponsables         :req.body.id_resp,
+            idArea                 :req.body.cod_area,
+            Estados_idEstados      :req.body.cod_status,
+            Equipos_idEquipos      :req.body.cod_equipo,
+            Servicios_idServicios  :req.body.cod_service,
+            Centro_idCentro        :req.body.cod_ccosto,
+            Clientes_idClientes    :req.body.id_clie,
+            Fecha                  :req.body.fec_OT,
+            HES                    :req.body.cod_hes,
+            Valor                  :req.body.cod_valor,
+            Observacion            :req.body.cod_observac          
           };                              
         var query = connection.query("UPDATE ot set ? WHERE idOT = ?",[data, codigo], function (err,rows){
             if (err)
