@@ -74,7 +74,7 @@ var ajaxMostrarOttsRouter = require('./routes/ajax/ajaxMostrarOtts');
 var ajaxMostrarOtclieRouter = require('./routes/ajax/ajaxMostrarOtclie');
 var ajaxMostrarOteqRouter = require('./routes/ajax/ajaxMostrarOteq');
 var ajaxMostrarOtstatusRouter = require('./routes/ajax/ajaxMostrarOtstatus');
-
+var ajaxMostrarOtrespRouter = require('./routes/ajax/ajaxMostrarOtresp');
 var app = express();
 
 // view engine setup
@@ -172,6 +172,8 @@ app.use('/Comboseq', ajaxMostrarOteqRouter);
 app.use('/Combosstatus', ajaxMostrarOtstatusRouter);
 app.use('/Combosprovincia', ajaxClientesProvinciaRouter);
 app.use('/Comboslocalidad', ajaxClientesLocalidadRouter);
+app.use('/Combosresponsable', ajaxMostrarOtrespRouter);
+
 
 
 //app.use('/productos/eliminar', ajaxEliminarRouter);

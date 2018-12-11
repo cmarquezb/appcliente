@@ -234,6 +234,11 @@ function actualizarclie(){
 
 function cancelclie(){
 	var formulario = "form_"+document.URL.split('/')[3];
+	if($('#cod_Clientes').attr("readonly"))
+	{
+		$('#cod_Clientes').attr('readonly', false);	
+	}
+	
 	$('#cod_Clientes').val('');
 	$('#desc_clie').val('');
 	$('#giro').val('');
