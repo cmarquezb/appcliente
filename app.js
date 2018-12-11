@@ -68,13 +68,15 @@ var ajaxEditarEstadosRouter = require('./routes/ajax/ajaxEditarEstados');
 var ajaxBajaEstadosRouter = require('./routes/ajax/ajaxBajaEstados');
 
 
-var ajaxMostrarOtRouter = require('./routes/ajax/ajaxMostrarOt');
+var ajaxMostrarOtareaRouter = require('./routes/ajax/ajaxMostrarOtarea');
 var ajaxMostrarOtccRouter = require('./routes/ajax/ajaxMostrarOtcc');
 var ajaxMostrarOttsRouter = require('./routes/ajax/ajaxMostrarOtts');
 var ajaxMostrarOtclieRouter = require('./routes/ajax/ajaxMostrarOtclie');
 var ajaxMostrarOteqRouter = require('./routes/ajax/ajaxMostrarOteq');
 var ajaxMostrarOtstatusRouter = require('./routes/ajax/ajaxMostrarOtstatus');
 var ajaxMostrarOtrespRouter = require('./routes/ajax/ajaxMostrarOtresp');
+var ajaxMostrarOtcompletoRouter = require('./routes/ajax/ajaxMostrarOt');
+
 var app = express();
 
 // view engine setup
@@ -164,7 +166,7 @@ app.use('/Sistema/guardar', ajaxGuardarRouter);
 app.use('/Sistema/editar', ajaxEditarRouter);
 app.use('/Sistema/logout', logoutRouter);
 
-app.use('/Combos', ajaxMostrarOtRouter);
+app.use('/Combosarea', ajaxMostrarOtareaRouter);
 app.use('/Comboscc', ajaxMostrarOtccRouter);
 app.use('/Combosts', ajaxMostrarOttsRouter);
 app.use('/Combosclie', ajaxMostrarOtclieRouter);
@@ -173,6 +175,7 @@ app.use('/Combosstatus', ajaxMostrarOtstatusRouter);
 app.use('/Combosprovincia', ajaxClientesProvinciaRouter);
 app.use('/Comboslocalidad', ajaxClientesLocalidadRouter);
 app.use('/Combosresponsable', ajaxMostrarOtrespRouter);
+app.use('/CombosOtcompleto', ajaxMostrarOtcompletoRouter);
 
 
 

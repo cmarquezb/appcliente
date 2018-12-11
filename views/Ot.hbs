@@ -5,9 +5,39 @@
       $( "<div>" ).text( message ).prependTo( "#log" );
       $( "#log" ).scrollTop( 0 );
     }
- 
+
+   $( "#cod_OT" ).autocomplete({
+      source: "/CombosOtcompleto",
+      minLength: 1,
+      select: function( event, ui ) {
+        log( "Selected: " + ui.item.value1 + " : " + ui.item.label ); 
+        $("#id_resp").val(ui.item.value2);
+        $("#cod_area").val(ui.item.value3);
+        $("#cod_status").val(ui.item.value4);
+        $("#cod_equipo").val(ui.item.value5);
+        $("#cod_service").val(ui.item.value6);
+        $("#cod_ccosto").val(ui.item.value7);
+        $("#id_clie").val(ui.item.value8);
+        $("#fec_OT").val(ui.item.value9);
+        $("#cod_hes").val(ui.item.value10);
+        $("#cod_valor").val(ui.item.value11);
+        $("#cod_observac").val(ui.item.value12);
+        
+        $("#desc_resp").val(ui.item.value22);
+        $("#desc_area").val(ui.item.value33);
+        $("#desc_status").val(ui.item.value44);
+        $("#desc_equipo").val(ui.item.value55);
+        $("#desc_service").val(ui.item.value66);
+        $("#desc_ccosto").val(ui.item.value77);
+        $("#desc_clie").val(ui.item.value88);
+        
+
+       
+      }
+    });
+
     $( "#desc_area" ).autocomplete({
-      source: "/Combos",
+      source: "/Combosarea",
       minLength: 1,
       select: function( event, ui ) {
         log( "Selected: " + ui.item.value + " : " + ui.item.label );
