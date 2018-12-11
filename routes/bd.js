@@ -10,7 +10,7 @@ var connection=mysql.createConnection({
 
 connection.connect(function (error){
     if (error)
-        console.log('Problemas de conexion con mysql');
+        console.log('Problemas de conexion con mysql : ' + error);
     else
         console.log('se inicio conexion');
 });
