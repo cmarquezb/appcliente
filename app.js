@@ -124,7 +124,7 @@ app.use('/Responsables', ResponsablesRouter);
 app.use('/Servicios', ServiciosRouter); 
 app.use('/Sistema', SistemaRouter);
 app.use('/users', usersRouter);
-
+app.use('/mostrar', SistemaRouter);
 //llamados por ajax
 app.use('/Area/mostrar', ajaxMostrarAreaRouter);
 app.use('/Area/guardar', ajaxGuardarAreaRouter);
