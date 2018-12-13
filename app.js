@@ -77,6 +77,10 @@ var ajaxMostrarOtstatusRouter = require('./routes/ajax/ajaxMostrarOtstatus');
 var ajaxMostrarOtrespRouter = require('./routes/ajax/ajaxMostrarOtresp');
 var ajaxMostrarOtcompletoRouter = require('./routes/ajax/ajaxMostrarOt');
 
+var ajaxGuardarOtRouter = require('./routes/ajax/ajaxGuardarOt');
+var ajaxEditarOtRouter = require('./routes/ajax/ajaxEditarOt');
+var ajaxBajaOtRouter = require('./routes/ajax/ajaxBajaOt');
+
 var app = express();
 
 // view engine setup
@@ -177,7 +181,9 @@ app.use('/Comboslocalidad', ajaxClientesLocalidadRouter);
 app.use('/Combosresponsable', ajaxMostrarOtrespRouter);
 app.use('/CombosOtcompleto', ajaxMostrarOtcompletoRouter);
 
-
+app.use('/Ot/guardar', ajaxGuardarOtRouter);
+app.use('/Ot/editar',ajaxEditarOtRouter);
+app.use('/Ot/baja',ajaxBajaOtRouter);
 
 //app.use('/productos/eliminar', ajaxEliminarRouter);
 // catch 404 and forward to error handler

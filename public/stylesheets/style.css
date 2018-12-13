@@ -255,7 +255,7 @@ tbody td:before {
   background: rgba(73,155,234,1);
  }
 
- #topheader .navbar-nav li > a {
+#topheader .navbar-nav li > a {
   background-color: #006;
 }
 #topheader .navbar-nav li > a:hover, #topheader .navbar-nav li > a:focus {
@@ -339,5 +339,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', end
   display: none;
 }
 #form_Estados {  
+  display: none;
+}
+
+#editarot{
   display: none;
 }

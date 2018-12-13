@@ -20,7 +20,7 @@ router.post('/', function(req, res, next) {
         var query = connection.query("UPDATE ot set ? WHERE idOT = ?",[data, codigo], function (err,rows){
             if (err)
                 console.log("Error Selecting : %s ",err );            
-            res.send('el producto fue dado actualizado');            
+            res.send('La OT fue actualizada');            
         });  
     });  
 });
