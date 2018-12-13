@@ -237,8 +237,7 @@ function cancelclie(){
 	if($('#cod_Clientes').attr("readonly"))
 	{
 		$('#cod_Clientes').attr('readonly', false);	
-	}
-	
+	}	
 	$('#cod_Clientes').val('');
 	$('#desc_clie').val('');
 	$('#giro').val('');
@@ -297,7 +296,8 @@ function guardarot(){
 			$("#desc_ccosto").val('');
 			$("#desc_clie").val('');
 			$('#guardarot').show();
-			$('#editarot').hide();		
+			$('#editarot').hide();	
+			$('#eliminarot').hide();	
 			$('#mensaje').html(data);
 			cargar_all();	
 		}
@@ -349,6 +349,7 @@ function actualizarot(){
 			$('#mensaje').html(data);
 			$('#guardarot').show();
 			$('#editarot').hide();
+			$('#eliminarot').hide();
 			cargar_all();	
 		}
 	});
@@ -378,4 +379,44 @@ function cancelot(){
 	$("#mensaje").hide();
 	$('#guardarot').show();
 	$('#editarot').hide();
+	$('#eliminarot').hide();
 }
+
+function eliminarot(){
+	var formulario = "form_"+document.URL.split('/')[3];
+	//formulario = formulario.toLowerCase();
+	var URL = "/"+ document.URL.split('/')[3] + "/baja";
+	$.ajax({
+		type: "POST",		
+		url: URL,
+		data: {
+			cod_OT 	: $("#cod_OT").val()					  
+		},
+		"success":function(data){
+			$("#cod_OT").val('');
+			$("#id_resp").val('');
+			$("#cod_area").val('');
+			$("#cod_status").val('');
+			$("#cod_equipo").val('');
+			$("#cod_service").val('');
+			$("#cod_ccosto").val('');
+			$("#id_clie").val('');
+			$("#fec_OT").val('');
+			$("#cod_hes").val('');
+			$("#cod_valor").val('');
+			$("#cod_observac").val('');
+			$("#desc_resp").val('');
+			$("#desc_area").val('');
+			$("#desc_status").val('');
+			$("#desc_equipo").val('');
+			$("#desc_service").val('');
+			$("#desc_ccosto").val('');
+			$("#desc_clie").val('');						
+			$('#mensaje').html(data);
+			$('#guardarot').show();
+			$('#editarot').hide();
+			$('#eliminarot').hide();
+			cargar_all();	
+		}
+	});
+}	

@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
             sql +=" ot.Servicios_idServicios AS value6, servicios.Desc_Servicio AS value66,";
             sql +=" ot.Centro_idCentro AS value7, centro.Centro_Costo AS value77,";
             sql +=" ot.Clientes_idClientes AS value8, clientes.Nombres AS value88,";
-            sql +=" DATE_FORMAT(ot.Fecha, '%d/%m/%Y') AS value9, ot.HES AS value10, ot.Valor AS value11, ot.Observacion AS value12  FROM ot"; 
+            sql +=" DATE_FORMAT(ot.Fecha, '%Y/%m/%d') AS value9, ot.HES AS value10, ot.Valor AS value11, ot.Observacion AS value12  FROM ot"; 
             sql +=" INNER JOIN area on area.idArea=ot.idArea";
             sql +=" INNER JOIN centro on centro.idCentro=ot.Centro_idCentro";
             sql +=" INNER JOIN clientes on clientes.idClientes=ot.Clientes_idClientes";

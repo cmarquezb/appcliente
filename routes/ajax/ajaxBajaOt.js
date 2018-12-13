@@ -8,7 +8,7 @@ router.post('/', function(req, res, next) {
         {  
           if (err)
               console.log("Error inserting : %s ",err );         
-          res.send('El producto fue dado de baja');          
+          res.send('La OT fue dado de baja');          
         });            
     });  
 });

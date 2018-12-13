@@ -13,6 +13,7 @@
         log( "Selected: " + ui.item.value1 + " : " + ui.item.label ); 
         $('#guardarot').hide();
 	      $('#editarot').show();
+        $('#eliminarot').show();
         $("#cod_OT").val(ui.item.value1);
         $("#id_resp").val(ui.item.value2);
         $("#cod_area").val(ui.item.value3);
@@ -20,12 +21,9 @@
         $("#cod_equipo").val(ui.item.value5);
         $("#cod_service").val(ui.item.value6);
         $("#cod_ccosto").val(ui.item.value7);
-        $("#id_clie").val(ui.item.value8);
-       // var dia = ui.item.value9.getDate(); 
-       // var mes =  ("0" + (ui.item.value9.getMonth() + 1));
-       // var anio = ui.item.value9.getFullYear();
-       // var fechatotal = dia + "/"+ mes +"/" + anio
-        $("#fec_OT").val(ui.item.value9); //html('fechatotal');
+        $("#id_clie").val(ui.item.value8);    
+        $("#fec_OT").val(ui.item.value9);
+        console.log(fec_OT);
         $("#cod_hes").val(ui.item.value10);
         $("#cod_valor").val(ui.item.value11);
         $("#cod_observac").val(ui.item.value12);
@@ -158,7 +156,8 @@
      <div class="col-md-12 col-sm-12 col-xs-12">
       <div class="btn-group" id="botones">                    
           <button type="button" class="btn btn-primary" id="guardarot" onclick="guardarot()">Guardar</button>
-          <button type="button" class="btn btn-primary" id="editarot" onclick="actualizarot()">Actualizar</button>                
+          <button type="button" class="btn btn-primary" id="editarot" onclick="actualizarot()">Actualizar</button> 
+          <button type="button" class="btn btn-primary" id="eliminarot" onclick="eliminarot()">Eliminar</button>                               
           <button type="button" class="btn btn-primary" id="cancelarot" onclick="cancelot()">Cancelar</button>               				            
       </div> 
     </div>                    
