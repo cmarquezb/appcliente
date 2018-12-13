@@ -164,7 +164,7 @@ app.use('/Estados/baja', ajaxBajaEstadosRouter);
 app.use('/Sistema/mostrar', ajaxMostrarRouter);
 app.use('/Sistema/guardar', ajaxGuardarRouter);
 app.use('/Sistema/editar', ajaxEditarRouter);
-app.use('/Sistema/logout', logoutRouter);
+app.use('/Logout', logoutRouter);
 
 app.use('/Combosarea', ajaxMostrarOtareaRouter);
 app.use('/Comboscc', ajaxMostrarOtccRouter);

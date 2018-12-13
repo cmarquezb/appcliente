@@ -262,23 +262,54 @@ function guardarot(){
 	$.ajax({
 		type: "POST",		
 		url: URL,
-		data: {
-			idClientes:$('#cod_Clientes').val(),
-			Nombres:$('#desc_clie').val(),
-			Giro:$('#giro').val(),
-			Direccion:$('#direccion').val(),
-			Fono:$('#fono').val(),
-			celular:$('#celular').val(),
-			email:$('#email_clie').val()		  
+		data: {  
+			cod_OT 		: $("#cod_OT").val(),
+			id_resp		: $("#id_resp").val(),
+			cod_area	: $("#cod_area").val(),
+			cod_status	: $("#cod_status").val(),
+			cod_equipo	: $("#cod_equipo").val(),
+			cod_service	: $("#cod_service").val(),
+			cod_ccosto 	: $("#cod_ccosto").val(),
+			id_clie		: $("#id_clie").val(),
+			fec_OT		: $("#fec_OT").val(),
+			cod_hes		: $("#cod_hes").val(),
+			cod_valor	: $("#cod_valor").val(),
+			cod_observac: $("#cod_observac").val()
+           /*  
+			idOT 				: $("#cod_OT").val(),
+			idResponsables		: $("#id_resp").val(),
+			idArea				: $("#cod_area").val(),
+			Estados_idEstados	: $("#cod_status").val(),
+			Equipos_idEquipos	: $("#cod_equipo").val(),
+			Servicios_idServicios: $("#cod_service").val(),
+			Centro_idCentro 	: $("#cod_ccosto").val(),
+			Clientes_idClientes	: $("#id_clie").val(),
+			Fecha 				: $("#fec_OT").val(),
+			HES					: $("#cod_hes").val(),
+			Valor				: $("#cod_valor").val(),
+			Observacion			: $("#cod_observac").val()*/
+				  
 		},
 		"success":function(data){
-			$('#cod_Clientes').val('');
-			$('#desc_clie').val('');
-			$('#giro').val('');
-			$('#direccion').val('');
-			$('#fono').val('');
-			$('#celular').val('');
-			$('#email_clie').val('');	
+			$("#cod_OT").val('');
+			$("#id_resp").val('');
+			$("#cod_area").val('');
+			$("#cod_status").val('');
+			$("#cod_equipo").val('');
+			$("#cod_service").val('');
+			$("#cod_ccosto").val('');
+			$("#id_clie").val('');
+			$("#fec_OT").val('');
+			$("#cod_hes").val('');
+			$("#cod_valor").val('');
+			$("#cod_observac").val('');
+			$("#desc_resp").val('');
+			$("#desc_area").val('');
+			$("#desc_status").val('');
+			$("#desc_equipo").val('');
+			$("#desc_service").val('');
+			$("#desc_ccosto").val('');
+			$("#desc_clie").val('');
 			$('#'+formulario).toggle();
 			$('#mensaje').html(data);
 			cargar_all();	
@@ -318,15 +349,27 @@ function actualizarot(){
 			email:$('#email_clie').val()		  
 		},
 		"success":function(data){
-			$('#cod_Clientes').val('');
-			$('#desc_clie').val('');
-			$('#giro').val('');
-			$('#direccion').val('');
-			$('#fono').val('');
-			$('#celular').val('');
-			$('#email_clie').val('');	
+			$("#cod_OT").val('');
+			$("#id_resp").val('');
+			$("#cod_area").val('');
+			$("#cod_status").val('');
+			$("#cod_equipo").val('');
+			$("#cod_service").val('');
+			$("#cod_ccosto").val('');
+			$("#id_clie").val('');
+			$("#fec_OT").val('');
+			$("#cod_hes").val('');
+			$("#cod_valor").val('');
+			$("#cod_observac").val('');
+			$("#desc_resp").val('');
+			$("#desc_area").val('');
+			$("#desc_status").val('');
+			$("#desc_equipo").val('');
+			$("#desc_service").val('');
+			$("#desc_ccosto").val('');
+			$("#desc_clie").val('');	
 			$('#'+formulario).toggle();
-			$('#cod_Clientes').attr('readonly', false);				
+			$('#cod_OT').attr('readonly', false);				
 			$('#mensaje').html(data);
 			cargar_all();	
 		}
@@ -335,23 +378,30 @@ function actualizarot(){
 
 function cancelot(){
 	var formulario = "form_"+document.URL.split('/')[3];
-	if($('#cod_Clientes').attr("readonly"))
+	if($('#cod_OT').attr("readonly"))
 	{
-		$('#cod_Clientes').attr('readonly', false);	
+		$('#cod_OT').attr('readonly', false);	
 	}
 	
-	$('#cod_Clientes').val('');
-	$('#desc_clie').val('');
-	$('#giro').val('');
-	$('#direccion').val('');
-	$('#fono').val('');
-	$('#celular').val('');
-	$('#email_clie').val('');
-	$('#provincia').val('');
-	$('#cod_provincia').val('');
-	$('#localidad').val('');
-	$('#cod_localidad').val('');
-	$('#cod_postal').val('');
+	$("#cod_OT").val('');
+	$("#id_resp").val('');
+	$("#cod_area").val('');
+	$("#cod_status").val('');
+	$("#cod_equipo").val('');
+	$("#cod_service").val('');
+	$("#cod_ccosto").val('');
+	$("#id_clie").val('');
+	$("#fec_OT").val('');
+	$("#cod_hes").val('');
+	$("#cod_valor").val('');
+	$("#cod_observac").val('');
+	$("#desc_resp").val('');
+	$("#desc_area").val('');
+	$("#desc_status").val('');
+	$("#desc_equipo").val('');
+	$("#desc_service").val('');
+	$("#desc_ccosto").val('');
+	$("#desc_clie").val('');
 	$('#'+formulario).toggle();	
 	$("#mensaje").hide();
 }
