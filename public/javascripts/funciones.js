@@ -254,3 +254,104 @@ function cancelclie(){
 	$('#'+formulario).toggle();	
 	$("#mensaje").hide();
 }
+
+function guardarot(){
+	var URL = "/"+ document.URL.split('/')[3] + "/guardar";	
+	var formulario = "form_"+document.URL.split('/')[3];
+	
+	$.ajax({
+		type: "POST",		
+		url: URL,
+		data: {
+			idClientes:$('#cod_Clientes').val(),
+			Nombres:$('#desc_clie').val(),
+			Giro:$('#giro').val(),
+			Direccion:$('#direccion').val(),
+			Fono:$('#fono').val(),
+			celular:$('#celular').val(),
+			email:$('#email_clie').val()		  
+		},
+		"success":function(data){
+			$('#cod_Clientes').val('');
+			$('#desc_clie').val('');
+			$('#giro').val('');
+			$('#direccion').val('');
+			$('#fono').val('');
+			$('#celular').val('');
+			$('#email_clie').val('');	
+			$('#'+formulario).toggle();
+			$('#mensaje').html(data);
+			cargar_all();	
+		}
+	});
+}	
+
+function editarot(idClientes, Nombres, Giro, Direccion, Fono, celular, email , form_name){
+	$('#'+form_name).toggle();
+	$('#guardar1').hide();
+	$('#editar').show();
+	$('#cod_Clientes').val(idClientes);
+	$('#desc_clie').val(Nombres);
+	$('#giro').val(Giro);
+	$('#direccion').val(Direccion);
+	$('#fono').val(Fono);
+	$('#celular').val(celular);
+	$('#email_clie').val(email);
+	$('#cod_Clientes').attr('readonly', true);	
+}
+
+function actualizarot(){
+	
+	var formulario = "form_"+document.URL.split('/')[3];
+	//formulario = formulario.toLowerCase();
+	var URL = "/"+ document.URL.split('/')[3] + "/editar";
+	$.ajax({
+		type: "POST",		
+		url: URL,
+		data: {
+			idClientes:$('#cod_Clientes').val(),
+			Nombres:$('#desc_clie').val(),
+			Giro:$('#giro').val(),
+			Direccion:$('#direccion').val(),
+			Fono:$('#fono').val(),
+			celular:$('#celular').val(),
+			email:$('#email_clie').val()		  
+		},
+		"success":function(data){
+			$('#cod_Clientes').val('');
+			$('#desc_clie').val('');
+			$('#giro').val('');
+			$('#direccion').val('');
+			$('#fono').val('');
+			$('#celular').val('');
+			$('#email_clie').val('');	
+			$('#'+formulario).toggle();
+			$('#cod_Clientes').attr('readonly', false);				
+			$('#mensaje').html(data);
+			cargar_all();	
+		}
+	});
+}
+
+function cancelot(){
+	var formulario = "form_"+document.URL.split('/')[3];
+	if($('#cod_Clientes').attr("readonly"))
+	{
+		$('#cod_Clientes').attr('readonly', false);	
+	}
+	
+	$('#cod_Clientes').val('');
+	$('#desc_clie').val('');
+	$('#giro').val('');
+	$('#direccion').val('');
+	$('#fono').val('');
+	$('#celular').val('');
+	$('#email_clie').val('');
+	$('#provincia').val('');
+	$('#cod_provincia').val('');
+	$('#localidad').val('');
+	$('#cod_localidad').val('');
+	$('#cod_postal').val('');
+	$('#'+formulario).toggle();	
+	$("#mensaje").hide();
+}

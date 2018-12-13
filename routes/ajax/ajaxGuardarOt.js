@@ -21,7 +21,7 @@ router.post('/', function(req, res, next) {
         var query = connection.query('INSERT INTO ot set ?',registro, function (error,rows){
             if (error)
                 console.log("Error Selecting : %s ",error );
-            res.send('el producto fue dado de alta');            
+            res.send('La OT fue dado de alta');            
         });  
     });  
 });
