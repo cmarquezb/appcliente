@@ -23,8 +23,16 @@
         $("#cod_ccosto").val(ui.item.value7);
         $("#id_clie").val(ui.item.value8);    
         $("#fec_OT").val(ui.item.value9);
-        console.log(fec_OT);
-        $("#cod_hes").val(ui.item.value10);
+        if(isNaN($("#cod_hes").val(ui.item.value10))){
+          $.getJSON('http://ws.geeklab.com.ar/dolar/get-dolar-json.php', function(data) {
+            var dailyIndicators = data;
+            $("#cod_hes").val(dailyIndicators.libre);           
+          }).fail(function() {
+            console.log('Error al consumir la API!');
+          });
+        }else{
+          $("#cod_hes").val(ui.item.value10);
+        }           
         $("#cod_valor").val(ui.item.value11);
         $("#cod_observac").val(ui.item.value12);
         $("#desc_resp").val(ui.item.value22);
@@ -100,6 +108,13 @@
       }
     });
 	});
+// API REST VALOR DOLAR $ARG 
+$.getJSON('http://ws.geeklab.com.ar/dolar/get-dolar-json.php', function(data) {
+    var dailyIndicators = data;
+    $("#cod_hes").val(dailyIndicators.libre);           
+}).fail(function() {
+    console.log('Error al consumir la API!');
+});
 
 </script>
    

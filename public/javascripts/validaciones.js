@@ -40,20 +40,14 @@ $(document).ready(function(){
 }
 
 function validaremailfinal(idemail){
-    if (!(/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(idemail.value))){
+    if (!(/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/.test(idemail.value))){
         idemail = "";
         document.getElementById(idemail).focus();  
         return false;     
     }
 }
-function ValidarCadenaExpReg() { 
-    // Expresion regular que representa un Email válido 
-    var cadena = "^[a-z]+@[a-z]+\.[a-z]{2,4}$"; 
-    re = new RegExp(cadena); 
-    if (document.getElementById("email").value.match(re)) alert("Aceptado"); else alert("Rechazado"); 
-}
-//solo enteros ^(?:\+|-)?\d+$
 
+//solo enteros ^(?:\+|-)?\d+$   
 
 // solo texto
 function validartexto(e) { 

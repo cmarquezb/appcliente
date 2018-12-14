@@ -299,6 +299,12 @@ function guardarot(){
 			$('#editarot').hide();	
 			$('#eliminarot').hide();	
 			$('#mensaje').html(data);
+			$.getJSON('http://ws.geeklab.com.ar/dolar/get-dolar-json.php', function(data) {
+				var dailyIndicators = data;
+				$("#cod_hes").val(dailyIndicators.libre);           
+			}).fail(function() {
+				console.log('Error al consumir la API!');
+			});
 			cargar_all();	
 		}
 	});
@@ -309,6 +315,9 @@ function actualizarot(){
 	var formulario = "form_"+document.URL.split('/')[3];
 	//formulario = formulario.toLowerCase();
 	var URL = "/"+ document.URL.split('/')[3] + "/editar";
+	if($("#fec_OT").val()==""){
+		console.log('Error debe ingresar fecha');
+	}else{
 	$.ajax({
 		type: "POST",		
 		url: URL,
@@ -350,9 +359,16 @@ function actualizarot(){
 			$('#guardarot').show();
 			$('#editarot').hide();
 			$('#eliminarot').hide();
+			$.getJSON('http://ws.geeklab.com.ar/dolar/get-dolar-json.php', function(data) {
+				var dailyIndicators = data;
+				$("#cod_hes").val(dailyIndicators.libre);           
+			}).fail(function() {
+				console.log('Error al consumir la API!');
+			});
 			cargar_all();	
 		}
 	});
+	}
 }
 
 function cancelot(){
@@ -380,6 +396,12 @@ function cancelot(){
 	$('#guardarot').show();
 	$('#editarot').hide();
 	$('#eliminarot').hide();
+	$.getJSON('http://ws.geeklab.com.ar/dolar/get-dolar-json.php', function(data) {
+		var dailyIndicators = data;
+		$("#cod_hes").val(dailyIndicators.libre);           
+	}).fail(function() {
+		console.log('Error al consumir la API!');
+	});
 }
 
 function eliminarot(){
@@ -416,6 +438,12 @@ function eliminarot(){
 			$('#guardarot').show();
 			$('#editarot').hide();
 			$('#eliminarot').hide();
+			$.getJSON('http://ws.geeklab.com.ar/dolar/get-dolar-json.php', function(data) {
+				var dailyIndicators = data;
+				$("#cod_hes").val(dailyIndicators.libre);           
+			}).fail(function() {
+				console.log('Error al consumir la API!');
+			});
 			cargar_all();	
 		}
 	});

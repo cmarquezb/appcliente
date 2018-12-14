@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.post('/', function(req, res, next) {	       
     req.getConnection(function (err, connection) {               
-        var codigo = req.body.cod_OT;       
+        var codigo = req.body.cod_OT;            
         var data={      
             idResponsables         :req.body.id_resp,
             idArea                 :req.body.cod_area,
