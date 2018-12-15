@@ -23,6 +23,7 @@
         $("#cod_ccosto").val(ui.item.value7);
         $("#id_clie").val(ui.item.value8);    
         $("#fec_OT").val(ui.item.value9);
+        // este es el formato 2018-12-01 no acepta el 2018/12/01
         if(isNaN($("#cod_hes").val(ui.item.value10))){
           $.getJSON('http://ws.geeklab.com.ar/dolar/get-dolar-json.php', function(data) {
             var dailyIndicators = data;
